@@ -8,8 +8,9 @@
 <script type="text/javascript">
 $(function(){
 	  // ここにプログラムを記述
-	  $('#jqcal').click(function() {
-		  $('#jqresult').val($('#jqarg1').val() + $('#jqarg2').val());
+	  $('[name="insert"]').click(function() {
+		  $(this).parents('form').attr('action', '/SAStrutsTest/dbTest/insert');
+		  $(this).parents('form').submit();
 	  });
 	});
 
@@ -20,7 +21,6 @@ $(function(){
     val:<html:text property="val"/><br/>
 
     <input type="submit" name="insert" value="登録" />
-    <input type="submit" name="select" value="検索" />
     <br/>
     <br/>
 </s:form>
