@@ -74,11 +74,16 @@
           </execution>
           <execution>
             <id>s2jdbc-gen</id>
-            <phase>initialize</phase>
+            <phase>compile</phase>
             <configuration>
               <tasks>
-                <ant antfile="${basedir}/s2jdbc-gen-build.xml" inheritRefs="true">
-                <target name="${ant.target}" />
+                <ant antfile="${basedir}/s2jdbc-gen-build.xml" inheritRefs="true" target="init">
+                </ant>
+                <ant antfile="${basedir}/s2jdbc-gen-build.xml" inheritRefs="true" target="gen-entity">
+                </ant>
+                <ant antfile="${basedir}/s2jdbc-gen-build.xml" inheritRefs="true" target="gen-names">
+                </ant>
+                <ant antfile="${basedir}/s2jdbc-gen-build.xml" inheritRefs="true" target="gen-service">
                 </ant>
               </tasks>
             </configuration>
